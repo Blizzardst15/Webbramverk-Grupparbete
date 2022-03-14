@@ -6,7 +6,8 @@ import Bomi from "./components/pages/Bomi";
 import Erik from "./components/pages/Erik";
 import Kristofer from "./components/pages/Kristofer";
 import Header from "./components/Header";
-import Footer from "./components/footer/Footer"
+import Footer from "./components/footer/Footer";
+import Home from "./components/pages/Home";
 
 
 function App() {
