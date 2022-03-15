@@ -2,7 +2,7 @@ import React from 'react'
 
 function Erik() {
   return (
-    <div>Erik</div>
+    <h1>Erik</h1>
   )
 }
 
