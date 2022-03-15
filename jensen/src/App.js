@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sara from "./components/pages/Sara";
 import NoPage from "./components/pages/NoPage";
 import Info from "./components/pages/Bomi/Info";
-import Erik from "./components/pages/Erik";
+import Erik from "./components/pages/erik/Erik";
 import Kristofer from "./components/pages/Kristofer";
 import Header from "./components/Header";
 import Footer from "./components/footer/Footer";
