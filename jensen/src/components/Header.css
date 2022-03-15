@@ -1,9 +1,18 @@
 .fixed-header {
     width: 100%;
     position: fixed;
-    background: #333;
+    background: #0c2957;
     padding: 10px 0;
     color: #fff;
-    text-align: center;
+    text-align: right;
     top: 0;
+    font-size: 30px;
+}
+
+.logo {
+    float: left;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
 }
