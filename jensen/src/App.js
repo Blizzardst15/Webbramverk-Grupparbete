@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sara from "./components/pages/Sara";
+import Sara from "./components/pages/sara/Sara";
 import NoPage from "./components/pages/NoPage";
 import Info from "./components/pages/Bomi/Info";
 import Erik from "./components/pages/Erik";
