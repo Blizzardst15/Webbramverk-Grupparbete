@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sara from "./components/pages/Sara";
 import NoPage from "./components/pages/NoPage";
-import Bomi from "./components/pages/Bomi";
+import Info from "./components/pages/Bomi/Info";
 import Erik from "./components/pages/Erik";
 import Kristofer from "./components/pages/Kristofer";
 import Header from "./components/Header";
@@ -20,7 +20,7 @@ function App() {
         <Route path="/">
           <Route index element={<Home />} />
           <Route path="sara" element={<Sara />} />
-          <Route path="bomi" element={<Bomi />} />
+          <Route path="bomi" element={<Info />} />
           <Route path="kristofer" element={<Kristofer />} />
           <Route path="erik" element={<Erik />} />
           <Route path="*" element={<NoPage />} />
