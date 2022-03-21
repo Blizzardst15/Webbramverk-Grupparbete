@@ -1,6 +1,6 @@
 
 
-import Student from './components/Student'
+// import Student from './components/Student'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sara from "./components/pages/sara/Sara";
