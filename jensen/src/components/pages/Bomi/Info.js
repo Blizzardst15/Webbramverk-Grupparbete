@@ -170,18 +170,19 @@ const Info =() =>{
     placeholder="Enter a lastName..."
     onChange = {handleAddFormChange}
     />
-    <input 
-    type="text" 
-    name="major" 
-    ruquired="required" 
-    placeholder="Enter a major..."
-    onChange = {handleAddFormChange}
-    />
+  
     <input 
     type="text" 
     name="email" 
     ruquired="required" 
     placeholder="Enter an email..."
+    onChange = {handleAddFormChange}
+    />
+    <input 
+    type="text" 
+    name="major" 
+    ruquired="required" 
+    placeholder="Enter a major..."
     onChange = {handleAddFormChange}
     />
     <button type="submit">Add</button>
