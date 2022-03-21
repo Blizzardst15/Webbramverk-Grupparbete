@@ -3,8 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sara from "./components/pages/sara/Sara";
 import NoPage from "./components/pages/NoPage";
 import Info from "./components/pages/Bomi/Info";
+<<<<<<< HEAD
+import Erik from "./components/pages/erik/App";
+=======
 import InfoB from "./components/pages/Bomi/InfoB";
 import Erik from "./components/pages/erik/Erik";
+>>>>>>> origin/main
 import Kristofer from "./components/pages/Kristofer";
 import Header from "./components/Header";
 import Footer from "./components/footer/Footer";

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import React,{useState} from 'react';
+import './Info.css';
+import UtbList from './UtbList/UtbList';
+import NewUtb from '../Bomi/NewUtb/NewUub';
+=======
+>>>>>>> origin/main
 
 
 //by using the find index method so we¨will say cost index...
