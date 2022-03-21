@@ -27,7 +27,7 @@ const NewUtb = props =>{
     return(
         <form className="new-utb" onSubmit={addUtbHandler }>
             <input type="text" value={enteredText} onChange={textChangeHandler} />
-            <button type="submit">Add Ansökan</button>
+            <button type="submit">Add utbildning</button>
         </form>
     )
 }
