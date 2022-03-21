@@ -1,0 +1,19 @@
+.footer {
+    background-color: grey;
+    position: fixed;
+    height: 80px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+}
+
+.footer-text {
+    color: var(--Text_Color_1);
+    font-family: paragraph-font;
+}

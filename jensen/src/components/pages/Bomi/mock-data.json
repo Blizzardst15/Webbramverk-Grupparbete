@@ -1,0 +1,20 @@
+
+[
+    {
+    "id":1,
+    "firstName":"Pippi  🧖‍♀️",
+    "lastName" : "Långstrump Lee",
+    "major" : "Frontendutvecklare webbsäkerhet",
+    "email": "pippi.stockholm@gmail.com"
+    },
+    {"id":2,
+    "firstName":"Harry 🧛",
+    "lastName" : "Potter ",
+    "major" : "AWS",
+    "email": "harry.potter@gmail.com"
+    }
+
+
+
+    
+]
