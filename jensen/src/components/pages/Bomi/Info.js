@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './Info.css';
 import UtbList from './UtbList/UtbList';
-import NewUtb from './NewUtb/NewUtb';
+import NewUtb from '../Bomi/NewUtb/NewUub';
 
 
 const Info = ()=>{
