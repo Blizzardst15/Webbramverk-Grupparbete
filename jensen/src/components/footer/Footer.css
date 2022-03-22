@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 .footer {
     background-color: grey;
     position: fixed;
@@ -16,4 +17,8 @@
 .footer-text {
     color: var(--Text_Color_1);
     font-family: paragraph-font;
+}
+
+ul {
+    list-style: none;
 }

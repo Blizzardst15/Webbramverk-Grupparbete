@@ -1,5 +1,8 @@
 import React from 'react'
 import "./Footer.css"
+import Facebook from './Facebook';
+import Instagram from './Instagram';
+import Twitter from './Twitter';
 
 function Footer() {
     return (
@@ -20,13 +23,13 @@ function Footer() {
 
             <ul>
                 <li class="footer-text">
-                    <a class="footer-link" href="https://www.Instagram.com/">Instagram</a>
+                    <a class="footer-link" href="https://www.Instagram.com/"><Instagram width={20} /></a>
                 </li>
                 <li class="footer-text">
-                    <a class="footer-link" href="https://twitter.com/">Twitter</a>
+                    <a class="footer-link" href="https://twitter.com/"><Twitter width={20} /></a>
                 </li>
                 <li class="footer-text">
-                    <a class="footer-link" href="https://www.Facebook.com/">Facebook</a>
+                    <a class="footer-link" href="https://www.Facebook.com/"><Facebook width={20} /> </a>
                 </li>
             </ul>
         </div>
