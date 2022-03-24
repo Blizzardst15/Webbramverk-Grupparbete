@@ -1,0 +1,12 @@
+
+input[type="text"],
+input[type="email"],
+input[type="contact"],
+select {
+    width: 100px;
+    padding: 8px 0;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049 ;
+}

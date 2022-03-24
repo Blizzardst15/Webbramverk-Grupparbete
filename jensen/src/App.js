@@ -24,7 +24,7 @@ function App() {
           <Route path="bomi" element={<Info />} />
           <Route path="bomi/InfoB" element={<InfoB />} />
           <Route path="kristofer" element={<Kristofer />} />
-           <Route path="erik" element={<Erik />} /> 
+          <Route path="erik" element={<Erik />} /> 
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
