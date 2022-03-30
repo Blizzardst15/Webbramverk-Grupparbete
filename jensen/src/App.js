@@ -1,12 +1,8 @@
-
-
-// import Student from './components/Student'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sara from "./components/pages/sara/Sara";
 import NoPage from "./components/pages/NoPage";
-import Info from "./components/pages/Bomi/Info";
-import InfoB from "./components/pages/Bomi/InfoB";
+import Student from "./components/pages/Bomi/Student";
 import Erik from "./components/pages/erik/Erik";
 import Kristofer from "./components/pages/kristofer/Kristofer";
 import Header from "./components/Header";
@@ -24,8 +20,8 @@ function App() {
         <Route path="/">
           <Route index element={<Home />} />
           <Route path="sara" element={<Sara />} />
-          <Route path="bomi" element={<Info />} />
-          <Route path="bomi/InfoB" element={<InfoB />} />
+          <Route path="bomi" element={<Student />} />
+       
           <Route path="kristofer" element={<Kristofer />} />
            <Route path="erik" element={<Erik />} /> 
           <Route path="*" element={<NoPage />} />

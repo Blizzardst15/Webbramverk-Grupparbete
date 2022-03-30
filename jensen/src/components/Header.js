@@ -13,7 +13,7 @@ const Header = () => {
                 <Link to="/" style={{ textDecoration: "none", color: "white", paddingRight: '20px', paddingLeft: '20px' }}>Home</Link>
                 <Link to="/sara" style={{ textDecoration: "none", color: "white", paddingRight: '20px', paddingLeft: '20px' }}>Sara</Link>
                 <Link to="/bomi" style={{ textDecoration: "none", color: "white", paddingRight: '20px', paddingLeft: '20px' }}>Bomi</Link>
-                <Link to="/bomi/infoB" style={{ textDecoration: "none", color: "white", paddingRight: '20px', paddingLeft: '20px' }}>BomiB</Link>
+        
 
                 <Link to="/kristofer" style={{ textDecoration: "none", color: "white", paddingRight: '20px', paddingLeft: '20px' }}>Kristofer</Link>
                 <Link to="/erik" style={{ textDecoration: "none", color: "white", paddingRight: '20px', paddingLeft: '20px' }}>Erik</Link>
