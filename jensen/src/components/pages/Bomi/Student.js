@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 
 const Student = () => {
     return (
@@ -7,6 +8,15 @@ const Student = () => {
             Student
         </h1>
         </div>
+=======
+import "../style.css";
+
+const Student = () => {
+    return (
+        <h1>
+            Student
+        </h1>
+>>>>>>> main
     );
 };
 

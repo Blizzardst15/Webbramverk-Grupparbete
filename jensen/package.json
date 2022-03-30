@@ -39,9 +39,15 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "description": "This project is application for\r Jensen college.",
   "main": "Kristofer.js",
   "devDependencies": {},
   "author": "Bomi Erik Kristofer Sara",
+=======
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "",
+  "author": "Bomi Erik Sara Kristofer",
+>>>>>>> main
   "license": "ISC"
 }
