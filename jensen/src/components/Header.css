@@ -1,6 +1,7 @@
 .fixed-header {
     width: 100%;
-    position: fixed;
+    height: 80px;
+    position: static;
     background: #0c2957;
     padding: 10px 0;
     color: #fff;
