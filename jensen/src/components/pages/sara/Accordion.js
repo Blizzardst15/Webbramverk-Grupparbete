@@ -3,7 +3,7 @@ import "../style.css";
 import "./Accordion.css";
 import Chevron from "./Chevron";
 
-const Accordion = ({ description, fullName, title }) => {
+const Accordion = ({ description, fullName, title, onDelete, id }) => {
     const [setActive, setActiveState] = useState("");
     const [setHeight, setHeightState] = useState("0px");
     const descriptionHeight = useRef(null);
@@ -23,12 +23,16 @@ const Accordion = ({ description, fullName, title }) => {
                 <p className="accordion_title">
                     {fullName}
                 </p>
+
                 <Chevron className={`${setRotate}`} width={10} fill={"#777"} />
             </button>
 
             <div ref={descriptionHeight} style={{ maxHeight: `${setHeight}` }} className="accordion_content">
 
                 <div className="accordion_text" dangerouslySetInnerHTML={{ __html: description }} />
+                <button onClick={() => onDelete(id)}>
+                    Delete teacher {id}
+                </button>
 
             </div>
 

@@ -9,36 +9,58 @@ import { useState } from 'react';
 
 const Sara = () => {
 
+    const [fullName, setFullName] = useState('')
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
     const [teachersNames, setTeachersName] = useState([])
+
     const addTeacher = () => {
         const newTeachersName = {
             id: Date.now(),
-            title: 'Teacher',
-            description: 'English',
+            title,
+            description,
             bankAccount: '0000000',
-            fullName: 'Sara Razm',
+            fullName
         }
 
+        post('/api/create', {
+            newTeachersName
+        })
         setTeachersName([...teachersNames, newTeachersName])
         console.log('teacher:', teachersNames)
     }
 
     // const [id, setId] = useState(0)
-    // // get('/api/read').then((data) => console.log(data))
-    // post('/api/create', {
-    //     id: '1',
-    //     title: 'Teacher',
-    //     description: 'English',
-    //     bankAccount: '0000000',
-    //     fullName: 'Sara Razm',
-    // })
+    get('/api/read').then((data) => console.log(data))
+
+
+    const deleteTeacher = (id) => {
+        const filterTeachers = teachersNames.filter((teachername) => teachername.id !== id)
+        console.log(id, filterTeachers)
+        setTeachersName(filterTeachers)
+    }
+
     return (
         <div className="container">
+            <div>
+                <label> <input value={fullName} placeholder="Full name" onChange={(event) => {
+                    setFullName(event.target.value)
+                }} />
+                </label>
+                <label> <input value={title} placeholder="Title" onChange={(event) => {
+                    setTitle(event.target.value)
+                }} />
+                </label>
+                <label> <input value={description} placeholder="Description" onChange={(event) => {
+                    setDescription(event.target.value)
+                }} />
+                </label>
+            </div>
 
             <button onClick={addTeacher}>Add new teacher</button>
-            {teachersNames.map(({ fullName, description, title, id }) =>
-                <Accordion key={id} title={title} description={description} fullName={fullName} />
-            )}
+            {teachersNames.map(({ fullName, description, title, id }) => {
+                return <Accordion key={id} id={id} title={title} description={description} fullName={fullName} onDelete={deleteTeacher} />
+            })}
 
             <div>
 
