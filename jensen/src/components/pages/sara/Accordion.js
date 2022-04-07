@@ -3,11 +3,17 @@ import "../style.css";
 import "./Accordion.css";
 import Chevron from "./Chevron";
 
-const Accordion = ({ description, fullName, title, onDelete, id }) => {
+const Accordion = ({ description, fullName, title, onDelete, id, onEdit }) => {
     const [setActive, setActiveState] = useState("");
     const [setHeight, setHeightState] = useState("0px");
     const descriptionHeight = useRef(null);
-    const [setRotate, setRotateState] = useState("accordion_icon")
+    const [setRotate, setRotateState] = useState("accordion_icon");
+    const [editInput, setEditInput] = useState("0px")
+
+    // function editFunction() {
+    //     setActiveState(setActive === "" ? "active" : "")
+    //     setEditInput(setActive === "active" ? "0px" : '20px');
+    // }
 
 
     function toggleAccordion() {
@@ -32,7 +38,14 @@ const Accordion = ({ description, fullName, title, onDelete, id }) => {
                 <div className="accordion_text" dangerouslySetInnerHTML={{ __html: description }} />
                 <button onClick={() => onDelete(id)}>
                     Delete teacher {id}
+                </button> <br />
+                <button onClick={() => onEdit(id)}>
+                    Edit teacher {id}
                 </button>
+                <div className={`edit ${editInput}`} >
+                    <input value={fullName} type="text" className="edit" placeholder="full name" />
+                    <input value={fullName} type="text" className="edit" placeholder="description" />
+                </div>
 
             </div>
 

@@ -53,3 +53,13 @@
     font-size: 14px;
     padding: 18px;
 }
+
+/* .edit{
+    width:0;
+    height:0
+} */
+
+.active_edit{
+    width:50px;
+    height:50px;
+}

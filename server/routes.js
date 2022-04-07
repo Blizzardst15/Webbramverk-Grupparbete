@@ -8,12 +8,13 @@ let teachersNames = []
 
 router.get("/all", (req, res) => {
     console.log({
-        method: req.method
+        method: req.method,
+        data: teachersNames
     })
     res.json({
         status: 'success',
         method: req.method,
-        data: teachersNames.filter((teachersName) => teachersName.deleted !== false)
+        data: teachersNames
     })
 })
 
@@ -31,6 +32,7 @@ router.post('/create', (req, res) => {
         fullName: req.body.fullName,
         deleted: false
     }
+
 
     teachersNames.push(teachersName)
 
@@ -58,7 +60,7 @@ router.put('/update/:teachersNameId/:title/:description', (req, res) => {
         fullName
     }
 
-    const teachersNameIndex = teachersNames.find((teachersName) => teachersName.id == teachersNameId)
+    const teachersNameIndex = teachersNames.find((teachersName) => teachersName.id === teachersNameId)
     teachersNames[teachersNameIndex] = newTeachersName
 
     res.json({
@@ -73,6 +75,7 @@ router.delete('/delete/:teachersNameId', (req, res) => {
     const teachersNameId = req.params.teachersNameId
     const teachersNameIndex = teachersNames.find((teachersName) => teachersName.id == teachersNameId)
     teachersNames.splice(teachersNameIndex, 1)
+    console.log('teachersNameIndex:', teachersNameIndex)
 
     res.json({
         status: 'success',
