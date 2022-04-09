@@ -45,10 +45,10 @@ const Accordion = ({
 
                 <div className="accordion_text" dangerouslySetInnerHTML={{ __html: description }} />
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button class="btn btn-danger" onClick={() => onDelete(id)}>
+                    <button class="btn btn-danger btn-sm" onClick={() => onDelete(id)}>
                         Delete
                     </button>
-                    <button class="btn btn-primary" onClick={() => updateTeacher(id)}>
+                    <button class="btn btn-primary btn-sm" onClick={() => updateTeacher(id)}>
                         Edit
                     </button>
                 </div>

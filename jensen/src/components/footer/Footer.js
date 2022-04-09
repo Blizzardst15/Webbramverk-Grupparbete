@@ -6,7 +6,7 @@ import Twitter from './Twitter';
 
 function Footer() {
     return (
-        <div className='footer'>
+        <div className='footer' >
             <ul>
                 <li className="footer-text">
                     08-111 111 11

@@ -94,7 +94,7 @@ const Sara = () => {
                 </label>
             </div>
 
-            <button onClick={addTeacher}>Add new teacher</button>
+            <button onClick={addTeacher} class="btn btn-outline-secondary">Add new teacher</button>
             {teachersNames.map(({ fullName, description, title, id }) => {
                 return <Accordion
                     key={id}
