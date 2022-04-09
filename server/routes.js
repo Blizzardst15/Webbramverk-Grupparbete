@@ -28,7 +28,7 @@ router.post('/create', (req, res) => {
         id: req.body.id,
         title: req.body.title,
         description: req.body.description,
-        // bankAccount: req.body.bankAccount,
+        bankAccount: req.body.bankAccount,
         fullName: req.body.fullName,
         deleted: false
     }
