@@ -11,17 +11,19 @@ const Sara = () => {
     const [fullName, setFullName] = useState('')
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
+    const [bankAccount, setBankAccount] = useState('')
     const [teachersNames, setTeachersName] = useState([])
     const [updateFullName, editFullName] = useState('')
     const [updateTitle, editTitle] = useState('')
     const [updateDescription, editDescription] = useState('')
+    const [updateBankAccount, editBankAccount] = useState('')
 
     const addTeacher = () => {
         const newTeachersName = {
             id: Date.now(),
             title,
             description,
-            bankAccount: '0000000',
+            bankAccount,
             fullName
         }
 
@@ -58,10 +60,10 @@ const Sara = () => {
         console.log('description:', updateDescription, 'title:', updateTitle, 'fullName:', updateFullName)
 
         put(`/api/update/${id}`, {
-            title: "updateTitle",
+            title: updateTitle,
             fullName: updateFullName,
             description: updateDescription,
-            bankAccount: "update bankAccount"
+            bankAccount: updateBankAccount
         }).then((res) => {
             get('/api/all').then(
                 (res) => setTeachersName(res.data)
@@ -86,6 +88,10 @@ const Sara = () => {
                     setDescription(event.target.value)
                 }} />
                 </label>
+                <label> <input value={bankAccount} placeholder="Bank Account" onChange={(event) => {
+                    setBankAccount(event.target.value)
+                }} />
+                </label>
             </div>
 
             <button onClick={addTeacher}>Add new teacher</button>
@@ -103,6 +109,9 @@ const Sara = () => {
                     updateDescription={updateDescription}
                     updateFullName={updateFullName}
                     updateTitle={updateTitle}
+                    updateBankAccount={updateBankAccount}
+                    editBankAccount={editBankAccount}
+                    editTitle={editTitle}
                 />
             })}
 
