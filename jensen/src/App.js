@@ -21,8 +21,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="sara" element={<Sara />} />
           <Route path="bomi" element={<Info />} />
-          {/* <Route path="kristofer" element={<Kristofer />} /> */}
-          {/* <Route path="erik" element={<Erik />} /> */}
+          <Route path="kristofer" element={<Kristofer />} />
+          <Route path="erik" element={<Erik />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
