@@ -3,8 +3,7 @@ import "../style.css";
 import "./Sara.css";
 import Accordion from "./Accordion";
 import { get, put, taBort, post } from "./api"
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 
 
 const Sara = () => {
@@ -13,9 +12,9 @@ const Sara = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [teachersNames, setTeachersName] = useState([])
-    const [updateFullName, setUpdateFullName] = useState('')
-    const [updateTitle, setUpdateTitle] = useState('')
-    const [updateDescription, setUpdateDescription] = useState('')
+    const [updateFullName, editFullName] = useState('')
+    const [updateTitle, editTitle] = useState('')
+    const [updateDescription, editDescription] = useState('')
 
     const addTeacher = () => {
         const newTeachersName = {
@@ -33,9 +32,13 @@ const Sara = () => {
     }
 
 
-    get('/api/all').then(
-        (res) => setTeachersName(res.data),
-        console.log('teachersNames:', teachersNames))
+    useEffect(() => {
+        get('/api/all').then(
+            (res) => setTeachersName(res.data),
+            console.log('teachersNames:', teachersNames))
+    }, [setTeachersName]);
+
+
 
 
 
@@ -48,23 +51,27 @@ const Sara = () => {
 
     }
 
-    const editTeacher = (id) => {
+    const updateTeacher = (id) => {
 
-        // handleCallback = (childData) => {
-        //     this.setState({ name: childData })
-        // }
 
+
+        console.log('description:', updateDescription, 'title:', updateTitle, 'fullName:', updateFullName)
 
         put(`/api/update/${id}`, {
-            title: updateTitle,
+            title: "updateTitle",
             fullName: updateFullName,
             description: updateDescription,
             bankAccount: "update bankAccount"
-        }).then((res) => console.log(res))
+        }).then((res) => {
+            get('/api/all').then(
+                (res) => setTeachersName(res.data)
+            )
+        })
 
     }
 
     return (
+
         <div className="container">
             <div>
                 <label> <input value={fullName} placeholder="Full name" onChange={(event) => {
@@ -90,7 +97,13 @@ const Sara = () => {
                     description={description}
                     fullName={fullName}
                     onDelete={deleteTeacher}
-                    onEdit={editTeacher} />
+                    updateTeacher={updateTeacher}
+                    editFullName={editFullName}
+                    editDescription={editDescription}
+                    updateDescription={updateDescription}
+                    updateFullName={updateFullName}
+                    updateTitle={updateTitle}
+                />
             })}
 
             <div>

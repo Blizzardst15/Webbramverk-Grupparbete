@@ -45,7 +45,7 @@ router.post('/create', (req, res) => {
 
 
 
-router.put('/update/:teachersNameId/:title/:description', (req, res) => {
+router.put('/update/:teachersNameId', (req, res) => {
     const teachersNameId = req.params.teachersNameId
     const title = req.body.title
     const description = req.body.description
@@ -59,9 +59,16 @@ router.put('/update/:teachersNameId/:title/:description', (req, res) => {
         bankAccount,
         fullName
     }
+    console.log('teachers id:', teachersNameId)
+    console.log('fullName', fullName, 'description', description)
 
-    const teachersNameIndex = teachersNames.find((teachersName) => teachersName.id === teachersNameId)
+
+
+    const teachersNameIndex = teachersNames.findIndex((teachers) => teachers.id == teachersNameId)
+    console.log('teachers index:', teachersNameIndex)
     teachersNames[teachersNameIndex] = newTeachersName
+
+
 
     res.json({
         status: 'success',
