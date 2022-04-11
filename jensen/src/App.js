@@ -5,7 +5,7 @@ import NoPage from "./components/pages/NoPage";
 import Info from "./components/pages/Bomi/Info";
 import InfoB from "./components/pages/Bomi/InfoB";
 import Erik from "./components/pages/erik/Erik";
-import Kristofer from "./components/pages/kristofer/Kristofer";
+import Kristofer from "./components/Kristofer";
 import Header from "./components/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./components/pages/Home";
