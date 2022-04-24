@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
     background-color: grey;
     position: fixed;
     padding: 10px;
@@ -12,9 +12,9 @@
     flex-direction: row;
     justify-content: space-around;
     height: auto;
-}
+} */
 
-.footer-text {
+/* .footer-text {
     color: var(--Text_Color_1);
     font-family: paragraph-font;
-}
+} */
