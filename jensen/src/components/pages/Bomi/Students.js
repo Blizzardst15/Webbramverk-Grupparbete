@@ -7,7 +7,7 @@ import { get, post, put, taBort} from './utility/apib';
 
 const Header = (props) => {
 
-  const [infos, setInfos] = useState([])
+  // const [infos, setInfos] = useState([])
   // const [apiid, setApiId] = useState(0)
   const [counter, setCounter] = useState(0)
 
@@ -45,7 +45,7 @@ const Nav = (props) => {
           onClick={(event) => {
 
           get('./api/read').then((response)=>
-          setInfos(response.data)
+          setUnimode(response.data)
       
             )
 
@@ -305,6 +305,9 @@ const Students = () => {
     },
   ]);
 
+
+  
+
   let index = null;
 
   let updateControl = null;
@@ -413,16 +416,16 @@ const Students = () => {
           newTopics.push(newTopic);
           setTopics(newTopics);
 
-          setUimode("Read");
+          post('/api/create', newTopic)
 
-        
+          setUimode("Read");
           setId(nextId);
           setNextId(nextId + 1);
 
-          post('/api/create', newTopics)
-          setTopics('topics:', topics)
-
         }}
+
+
+    
       ></Create>
     );
   } else if (uimode === "UPDATE") {
@@ -505,14 +508,7 @@ const Students = () => {
         onChange={(_id) => {
           // alert(id);
 
-          useEffect(()=>{
-            get('/api/all').then(
-              (res)=> setUimode(res.data),
-              console.log('read', unimode)
-            ),[setUimode]
-            
-          })
-
+      
           setUimode("Read");
           setId(_id);
         }}
