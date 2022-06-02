@@ -1,6 +1,6 @@
 //Båmi 
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { get, post, put, taBort} from './utility/apib';
 
@@ -113,7 +113,7 @@ const Create = (props) => {
           major: "FrontendWebb/App" + counter,
         
         })
-        setCounter((previous)=> previous + 1)
+        setNextId((previous)=> previous + 1)
       
       
         }}
@@ -195,7 +195,7 @@ const Update = (props) => {
 
           props.onUpdate(title, firstname, lastname, email, major);
 
-          put(`./api/update/${id}`,{
+          put(`./api/update/${title}`,{
             firstname : "Jensen",
             lastname: "Yh",
             email: "Jensen@email.com",
@@ -400,6 +400,8 @@ const Students = () => {
       <Create
         onCreate={(_title, _firstname, _lastname, _email, _major) => {
           const newTopic = {
+
+            
             id: nextId,
             title: _title,
             firstname: _firstname,
@@ -407,14 +409,19 @@ const Students = () => {
             email: _email,
             major: _major,
           };
-
           const newTopics = [...topics];
           newTopics.push(newTopic);
           setTopics(newTopics);
 
           setUimode("Read");
+
+        
           setId(nextId);
           setNextId(nextId + 1);
+
+          post('/api/create', newTopics)
+          setTopics('topics:', topics)
+
         }}
       ></Create>
     );
@@ -449,6 +456,7 @@ const Students = () => {
           const newTopics = [...topics];
           const updatedTopic = {
 
+            
             id: id,
             title: title,
             firstname: firstname,
@@ -464,6 +472,8 @@ const Students = () => {
           }
           setTopics(newTopics);
           setUimode("Read");
+
+        
         }}
       ></Update>
     
@@ -494,6 +504,15 @@ const Students = () => {
         topics={topics}
         onChange={(_id) => {
           // alert(id);
+
+          useEffect(()=>{
+            get('/api/all').then(
+              (res)=> setUimode(res.data),
+              console.log('read', unimode)
+            ),[setUimode]
+            
+          })
+
           setUimode("Read");
           setId(_id);
         }}
@@ -508,6 +527,8 @@ const Students = () => {
             onClick={(event) => {
               event.preventDefault();
               setUimode("CREATE");
+
+
             }}
           >
             {" "}
