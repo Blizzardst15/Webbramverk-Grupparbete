@@ -106,7 +106,4 @@ infos[infoIndex] = newInfo;
     })
 
 
-
-
-
 module.exports = router;
