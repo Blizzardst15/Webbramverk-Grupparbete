@@ -1,44 +1,46 @@
 //Båmi 
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Search from './Search';
-import utbList from './utbList.json';
-import {useState} from 'react';
-import SearchResult from './SearchResult';
-import HeaderC from './HeaderC';
+import React, { useEffect, useState} from "react";
+import {Link, useLocation} from "react-router-dom";
+import "./HeaderB.css";
 
+const HeaderB =() => {
+    const [activeTab, setActtiveTab] = useState("homeB") ;
 
-
-    const HeaderB = ()=> {
-        const [utbs, setUtbs] = useState([])
-        console.log(utbs)
-
-        const utbSearch = (searchText, maxCount) => {
-            return utbList.filter(({title, keywords})=> {
-
-
-            return title.includes(searchText) || keywords.includes(searchText)
-        })
-            .slice(0, maxCount)
-    }
-
-    const search = (event) => {
-        const searchResult = utbSearch(event.target.value, 2)
-        setUtbs(searchResult)
-         // console.log(searchResult)
-    }
+    const location = useLocation();
+    useEffect(() => {
+        if(location.pathname === "/homeB") {
+            setActtiveTab("HomeB")
+        } else if( location.pathname === "/add") {
+            setActtiveTab ("AddUtbildning")
+        } else if ( location.pathname ==="/about") {
+            setActtiveTab("About")
+        }
+    }, [location])
 
     return (
-            <>
-            <HeaderC />
-            <Search search={search} />
-            <SearchResult searchResult={utbs} />
+        <div className="headerB">
+            <p className= "logo"> Ansökan Utbildning</p>
+            <div className= "header-right">
+                <Link to = "/homeB">
+                    <p className = {` $ { activeTab === "homeB ? "active : ""}`} onClick ={()=> setActtiveTab("homeB")}> 
+                    Utbildning</p>
+                </Link>
+                <Link to = "/add">
+                    <p className = {` $ { activeTab === "AddUtbindning ? "active : ""}`} onClick ={()=> setActtiveTab("AddUtbindning")}>
+                        Add Utbildning</p>
+                </Link>
+                <Link to = "/about">
+                    <p className = {` $ { activeTab === "About? "active : ""}`} onClick ={()=> setActtiveTab("About")}>
+                        About</p>
+                </Link>
+            </div>
+        </div>
+    );
+};
+
+export default HeaderB;
 
 
-            </>
-    )
 
-    }
 
-    export default HeaderB;

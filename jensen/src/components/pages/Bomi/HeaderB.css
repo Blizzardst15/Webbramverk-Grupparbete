@@ -1,0 +1,48 @@
+.headerB {
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.headerB p {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    line-height: 18px;
+    border-radius: 5px;
+    
+}
+
+.headerB p.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #575142;
+}
+
+.headerB p:hover {
+    background-color: white;
+    color: #5d6779;
+}
+
+.headerB p.activ {
+    background-color: rgb(250, 218, 155);
+    color:white;
+}
+
+.header-right {
+    float: rigth;
+}
+
+@media screen and (max-width: 500px) {
+    .headerB p {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
