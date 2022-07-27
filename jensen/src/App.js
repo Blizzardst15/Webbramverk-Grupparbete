@@ -27,7 +27,7 @@ function App() {
 
       <ToastContainer />   
       <Header />
-      <HeaderB />
+    
     
       <Routes>
         <Route path="/">
