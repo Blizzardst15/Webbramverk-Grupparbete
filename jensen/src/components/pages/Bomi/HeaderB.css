@@ -8,30 +8,31 @@
     color: black;
     text-align: center;
     padding: 10px;
-    font-size: 15px;
-    line-height: 18px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 15px;
     border-radius: 5px;
     
 }
 
 .headerB p.logo {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    color: #575142;
+    color: #5c5239;
 }
 
 .headerB p:hover {
-    background-color: white;
+    background-color:rgb(152, 159, 243);
     color: #5d6779;
 }
 
-.headerB p.activ {
-    background-color: rgb(250, 218, 155);
+.headerB p.active {
+    background-color: #efbb38;
     color:white;
 }
 
 .header-right {
-    float: rigth;
+    float: right;
 }
 
 @media screen and (max-width: 500px) {
