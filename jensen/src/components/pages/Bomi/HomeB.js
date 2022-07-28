@@ -1,13 +1,13 @@
-//Båmi 
+//Båmi
 
 import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
-import "HeaderC.css";
+import "./HomeB.css";
 import axios from "axios";
-import { getUsers } from '../../../../../server-bomi/controllers/users';
 
-const HeaderC = () => {
-    const [data, setDate] = useState([]);
+
+const HomeB = () => {
+const [data, setDate] = useState([]);
 
     useEffect(()=> {
         getUsers();
@@ -39,7 +39,10 @@ const getUsers = async () => {
                     return ( 
                         <tr key= {index}>
                             <th scope="row">{index +1}</th>
-
+                        <td>{item.firstName}</td>
+                        <td>{item.lastName}</td>
+                        <td>{item.emailName}</td>
+                        <td>{item.major}</td>
                         </tr>
                     )
                 })}
@@ -50,7 +53,23 @@ const getUsers = async () => {
     )
 }
 
-export default HeaderC;
+export default HomeB;
+
+
+
+
+// import React from 'react'
+
+// const HomeB = () => {
+//     return (
+//     <div>
+//         <h2> Home B</h2>
+//     </div>
+//   )
+// }
+
+// export default HomeB
+
 
 
 

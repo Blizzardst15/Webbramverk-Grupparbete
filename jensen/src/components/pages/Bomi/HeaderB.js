@@ -20,7 +20,7 @@ const HeaderB =() => {
 
     return (
         <div className="headerB">
-            <p className= "logo"> Ansökan Utbildning</p>
+            <p className= "logo"  > Ansökan Utbildning</p>
             <div className= "header-right">
                 <Link to = "/homeB">
                     <p className = {` $ { activeTab === "homeB ? "active : ""}`} onClick ={()=> setActtiveTab("homeB")}> 
