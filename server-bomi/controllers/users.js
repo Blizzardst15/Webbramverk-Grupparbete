@@ -25,8 +25,7 @@ export const deleteUser = (req, res) => {
 export const updateUser = (req, res) => {
     const user = users.find((user) => user.id === req.params.id);
 
-    user.firstName = req.body.firstName;
-    user.lastName = req.body.lastName;
+    user.name = req.body.name;
     user.email = req.body.email;
     user.major = req.body.major;
 

@@ -32,7 +32,7 @@ const HeaderB =() => {
                 </Link>
                 <Link to = "/about">
                     <p className = {` $ { activeTab === "About? "active : ""}`} onClick ={()=> setActtiveTab("About")}>
-                        About</p>
+                        Om Utbildning</p>
                 </Link>
             </div>
         </div>

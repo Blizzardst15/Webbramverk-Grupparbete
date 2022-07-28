@@ -2,8 +2,8 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-        <h2>About</h2>
+    <div style={{marginTop: "150px"}}>
+        <h2>Om Utbildning</h2>
     </div>
   )
 }

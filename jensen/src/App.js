@@ -27,7 +27,7 @@ function App() {
     <BrowserRouter>
   
 
-      <ToastContainer />   
+      <ToastContainer position="top-center"/>   
       <Header />
       <HeaderB />
     
