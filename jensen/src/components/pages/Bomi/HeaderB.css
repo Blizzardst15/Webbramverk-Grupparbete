@@ -7,9 +7,9 @@
     float: left;
     color: black;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 15px;
     border-radius: 5px;
 
@@ -17,7 +17,7 @@
 }
 
 .headerB p.logo {
-    font-size: 25px;
+    font-size: 16px;
     font-weight: bold;
     color: #35322a;
 
