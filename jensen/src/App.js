@@ -26,34 +26,28 @@ function App() {
   return (
     <BrowserRouter>
   
-
       <ToastContainer position="top-center"/>   
       <Header />
-      <HeaderB />
-    
+      {/* <HeaderB /> */}
     
       <Routes>
         <Route path="/">
-          {/* <Route index element={<Home />} /> */}
+          <Route index element={<Home />} />
           <Route path="sara" element={<Sara />} />
           <Route path="bomi" element={<Students />} />
           <Route path="bomi" element={<HeaderB />} />
           <Route path="/homeB" element={<HomeB />} />
-          {/* <Route path="header" element = {<HeaderB />} /> */}
           <Route path="/add" element={<AddEdit />} />
           <Route path="/update/:id" element={<AddEdit />} />
           <Route path="/view/:id" element={<View />} />
           <Route path="/about" element={<About />} />
-        
           <Route path="bomib" element={<ApiTest/>} /> 
-
           <Route path="kristofer" element={<Kristofer />} />
           <Route path="erik" element={<Erik />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
       <Footer />
-      {/* </div> */}
     </BrowserRouter>
   );
 }
