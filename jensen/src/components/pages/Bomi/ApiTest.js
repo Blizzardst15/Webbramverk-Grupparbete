@@ -1,7 +1,7 @@
 //Båmi 
 
 import {useState} from 'react';
-// import { get, post, put, taBort} from './utility/apib';
+import { get, post, put, taBort} from './utility/apib';
 import React from 'react';
 import HeaderB from './HeaderB';
 
