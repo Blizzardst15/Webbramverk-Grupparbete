@@ -7,8 +7,13 @@ import userRoutes from "./routes/usersB.js";
 const app = express();
 const port = 8080;
 
+
+const routes = require("./routes");
+
 app.use(bodyParser.json());
 app.use(cors());
+
+app.use("/api", routes);
 
 app.use("/", userRoutes);
 
