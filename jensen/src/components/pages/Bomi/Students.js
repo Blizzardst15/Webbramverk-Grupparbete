@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import Ansokan from './Ansokan';
+import { get, put, taBort, post } from "./api"
 
 const Students = () => {
 
@@ -34,6 +35,10 @@ const addAnsokan = () => {
 const deleteAnsokan = (deleteId) =>{
   const filteredAnsokans = ansokansNames.filter((ansokan) => ansokan.ansokanId !== deleteId)
     setAnsokansName(filteredAnsokans)
+
+    console.log('deleteId:', filteredAnsokans)
+
+    taBort(`/api/delete/${id}`)
 }
   return (
     <>
