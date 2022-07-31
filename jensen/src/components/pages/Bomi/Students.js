@@ -54,10 +54,13 @@ const deleteAnsokan = (deleteId) =>{
 
     taBort(`/api/delete/${id}`)
 }
+
+
   return (
     <>
       <h3 style={{textAlign:'center'}}>Jensen YH Ansökan</h3> 
       <div style={{display: 'flex', marginLeft: '20px'}}>
+
         <label>Title: <input value={title} onChange={(event) => {
           setTitle(event.target.value)
         }} /></label>
@@ -75,7 +78,7 @@ const deleteAnsokan = (deleteId) =>{
         </label>
 
       <button onClick={addAnsokan}>Add yh ansökan</button>
-      
+
       </div>
 
       {ansokansNames.map(({ansokanId, title, fullName, email, major})=>{
