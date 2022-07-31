@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Ansokan from './Ansokan';
 import { get, put, taBort, post } from "./api"
 
@@ -27,9 +27,23 @@ const addAnsokan = () => {
     email: email,
     major: major,
   }
+
+  post('/api/create', newAnsokanName)
+
   setAnsokansName([...ansokansNames, newAnsokanName])
   incrementCounter()
+
+  
+  console.log('Add ansokan:', ansokansNames)
+
 }
+
+useEffect(()=> {
+  get('/api/read').then(
+    (res) => setAnsokansName(res.data),
+    console.log('ansokansNames:', ansokansNames)
+  )
+},[setAnsokansName])
 
 
 const deleteAnsokan = (deleteId) =>{
@@ -60,8 +74,8 @@ const deleteAnsokan = (deleteId) =>{
         setMajor(event.target.value)}/>
         </label>
 
-
       <button onClick={addAnsokan}>Add yh ansökan</button>
+      
       </div>
 
       {ansokansNames.map(({ansokanId, title, fullName, email, major})=>{
