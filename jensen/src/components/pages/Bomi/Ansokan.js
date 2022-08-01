@@ -4,15 +4,17 @@ const Ansokan = ({id,
     email, 
     major, 
     onDelete, 
+    
     onUpdate,
     updateTitle,
     updateFullName,
     updateEmail,
     updateMajor,
-    setUpdateTitle,
-    setUpdateFullName,
-    setUpdateEmail,
-    setUpdateMajor
+    
+    editTitle,
+    editFullName,
+    editEmail,
+    editMajor
     }) =>{
     return(
         <div>
@@ -26,19 +28,19 @@ const Ansokan = ({id,
             <button onClick ={()=> onUpdate(id)}> Update ansökan</button>
 
             <input value={updateTitle} onChange={(e) => {
-                        setUpdateTitle(e.target.value)
+                        editTitle(e.target.value)
                         console.log(updateTitle)
                     }} type="text" name="update" placeholder=" Write Title"/>
             <input value={updateFullName} onChange={(e) => {
-                        setUpdateFullName(e.target.value)
+                        editFullName(e.target.value)
                         console.log(updateFullName)
                     }} type="text" name="update" placeholder=" Write Full Name" />
             <input value={updateEmail} onChange={(e) => {
-                        setUpdateEmail(e.target.value)
+                        editEmail(e.target.value)
                         console.log(updateEmail)
                     }} type="email" name="email" placeholder=" Write E-mail"/>
             <input value={updateMajor} onChange={(e) => {
-                        setUpdateMajor(e.target.value)
+                        editMajor(e.target.value)
                         console.log(updateMajor)
                     }} type="text" name="update" placeholder=" Write Major"/>
         </div>

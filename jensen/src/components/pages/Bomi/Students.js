@@ -15,10 +15,10 @@ const [email, setEmail] = useState('')
 const [major, setMajor] = useState('')
 const [ansokansNames, setAnsokansName] = useState([])
 
-const [updateTitle, setUpdateTitle] = useState('')
-const [updateFullName, setUpdateFullName] = useState('')
-const [updateEmail, setUpdateEmail] = useState('')
-const [updateMajor, setUpdateMajor] = useState('')
+const [updateTitle, editTitle] = useState('')
+const [updateFullName, editFullName] = useState('')
+const [updateEmail, editEmail] = useState('')
+const [updateMajor, editMajor] = useState('')
 
 
 
@@ -99,8 +99,8 @@ const updateAnsokan = (id) => {
         setMajor(event.target.value)}/>
         </label>
         
-        <br /><br />
-      <button style ={{marginLeft:"2px",color:"blue"}}
+        <br /><br /> <br /><br />
+      <button style ={{position:"relative",color:"blue"}}
         onClick={addAnsokan}>Add yh ansökan</button>
 
 
@@ -116,11 +116,18 @@ const updateAnsokan = (id) => {
         major={major} 
         onDelete={deleteAnsokan} 
 
-        setUpdateTitle= {title}
-        setUpdateFullName = {fullName}
-        setUpdateEmail = {email}
-        setUpdateMajor = {major}
+        updateAnsokan= {updateAnsokan}
+        updateTitle ={updateTitle}
+        updateFullName = {updateFullName}
+        updateEmail = {updateEmail}
+        updateMajor = {updateMajor}
         onUpdate ={updateAnsokan}
+
+        editTitle = {editTitle}
+        editFullName = {editFullName}
+        editEmail = {editEmail}
+        editMajor = {editMajor}
+
         />
   
       })}
