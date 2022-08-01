@@ -62,6 +62,7 @@ const deleteAnsokan = (deleteId) =>{
 
   const selectAnsokan = (id) => {
     let item = ansokans [id -1];
+
     setTitle(item.title)
     setFullName(item.fullName)
     setEmail(itme.email)
@@ -71,7 +72,8 @@ const deleteAnsokan = (deleteId) =>{
 
 const upadteAnsokan = (id) => {
 
-  
+
+  console.log('titlel:', updateTitle, 'fullName:', updateFullName, 'email:', updateEmail, 'major:', updateMajor)
 
   put(`/api/update/${id}`, {
     title: updateTitle,
@@ -112,7 +114,21 @@ const upadteAnsokan = (id) => {
       </div>
 
       {ansokansNames.map(({ansokanId, title, fullName, email, major})=>{
-        return <Ansokan key= {ansokanId} id={ansokanId} title={title} fullName ={fullName} email={email} major={major} onDelete={deleteAnsokan}  />
+        return <Ansokan 
+        key= {ansokanId} 
+        id={ansokanId} 
+        title={title} 
+        fullName ={fullName} 
+        email={email} 
+        major={major} 
+        onDelete={deleteAnsokan} 
+
+        updateTitle= {setUpdateTitle}
+        updateFullName = {setUpdateFullName}
+        updateEmail = {setUpdateEmail}
+        updateMajor = {setUpdateMajor}
+        onUpdate ={upadteAnsokan}
+        />
   
       })}
 
