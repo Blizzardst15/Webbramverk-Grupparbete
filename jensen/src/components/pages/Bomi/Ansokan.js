@@ -10,9 +10,10 @@ const Ansokan = ({id, title, fullName, email, major, onDelete, onUpdate}) =>{
         
 
             <tr>
-            <td><button onClikc ={()=> onUpdate(id)}> Update ansökan</button></td>
+            <td><button onClikck ={()=> onUpdate(id)}> Update ansökan</button></td>
             </tr>
 
+        
         </div>
 
     )
