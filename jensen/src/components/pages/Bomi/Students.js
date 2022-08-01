@@ -98,8 +98,10 @@ const upadteAnsokan = (id) => {
         <label>Major: <input value={major} onChange={(event)=>
         setMajor(event.target.value)}/>
         </label>
-
-      <button onClick={addAnsokan}>Add yh ansökan</button>
+        
+        <br /><br />
+      <button style ={{marginLeft:"2px",color:"blue"}}
+        onClick={addAnsokan}>Add yh ansökan</button>
 
 
       </div>
@@ -122,9 +124,6 @@ const upadteAnsokan = (id) => {
         />
   
       })}
-
-      
-
     </>
   
   );
