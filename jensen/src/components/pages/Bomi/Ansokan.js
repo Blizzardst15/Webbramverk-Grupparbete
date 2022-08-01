@@ -27,6 +27,7 @@ const Ansokan = ({id,
         
             <button onClick ={()=> onUpdate(id)}> Update ansökan</button>
 
+            <form>
             <input value={updateTitle} onChange={(e) => {
                         editTitle(e.target.value)
                         console.log(updateTitle)
@@ -43,6 +44,7 @@ const Ansokan = ({id,
                         editMajor(e.target.value)
                         console.log(updateMajor)
                     }} type="text" name="update" placeholder=" Write Major"/>
+            </form>
         </div>
 
     )
