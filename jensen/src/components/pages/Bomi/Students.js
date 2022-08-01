@@ -16,7 +16,7 @@ const [major, setMajor] = useState('')
 const [ansokansNames, setAnsokansName] = useState([])
 
 const [updateTitle, setUpdateTitle] = useState('')
-const [updatefullName, setUpdateFullName] = useState('')
+const [updateFullName, setUpdateFullName] = useState('')
 const [updateEmail, setUpdateEmail] = useState('')
 const [updateMajor, setUpdateMajor] = useState('')
 
@@ -61,14 +61,14 @@ const deleteAnsokan = (deleteId) =>{
 }
 
 
-const upadteAnsokan = (id) => {
+const updateAnsokan = (id) => {
 
 
   console.log('titlel:', updateTitle, 'fullName:', updateFullName, 'email:', updateEmail, 'major:', updateMajor)
 
   put(`/api/update/${id}`, {
     title: updateTitle,
-    fullName: upadteFullName,
+    fullName: updateFullName,
     email: updateEmail,
     major: updateMajor
   }).then((res) => {
@@ -116,11 +116,11 @@ const upadteAnsokan = (id) => {
         major={major} 
         onDelete={deleteAnsokan} 
 
-        updateTitle= {setUpdateTitle}
-        updateFullName = {setUpdateFullName}
-        updateEmail = {setUpdateEmail}
-        updateMajor = {setUpdateMajor}
-        onUpdate ={upadteAnsokan}
+        setUpdateTitle= {title}
+        setUpdateFullName = {fullName}
+        setUpdateEmail = {email}
+        setUpdateMajor = {major}
+        onUpdate ={updateAnsokan}
         />
   
       })}

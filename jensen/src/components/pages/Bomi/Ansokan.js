@@ -23,10 +23,7 @@ const Ansokan = ({id,
             <p>{`ID: ${id}`}</p>
             <button onClick={()=> onDelete(id)}>Delete ansökan</button>
         
-
-            <tr>
-            <td><button onClick ={()=> onUpdate(id)}> Update ansökan</button></td>
-            </tr>
+            <button onClick ={()=> onUpdate(id)}> Update ansökan</button>
 
             <input value={updateTitle} onChange={(e) => {
                         setUpdateTitle(e.target.value)
