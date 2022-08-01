@@ -15,6 +15,11 @@ const [email, setEmail] = useState('')
 const [major, setMajor] = useState('')
 const [ansokansNames, setAnsokansName] = useState([])
 
+const [updateTitle, setUpdateTitle] = useState('')
+const [updatefullName, setUpdateFullName] = useState('')
+const [updateEmail, setUpdateEmail] = useState('')
+const [updateMajor, setUpdateMajor] = useState('')
+
 
 
 const addAnsokan = () => {
@@ -55,6 +60,30 @@ const deleteAnsokan = (deleteId) =>{
     taBort(`/api/delete/${id}`)
 }
 
+  const selectAnsokan = (id) => {
+    let item = ansokans [id -1];
+    setTitle(item.title)
+    setFullName(item.fullName)
+    setEmail(itme.email)
+    setMajor(item.major)
+  }
+
+
+const upadteAnsokan = (id) => {
+
+  
+
+  put(`/api/update/${id}`, {
+    title: updateTitle,
+    fullName: upadteFullName,
+    email: updateEmail,
+    major: updateMajor
+  }).then((res) => {
+    get('/api/read').then(
+      (res) => setAnsokansName(res.data)
+    )
+  })
+}
 
   return (
     <>
@@ -79,11 +108,16 @@ const deleteAnsokan = (deleteId) =>{
 
       <button onClick={addAnsokan}>Add yh ansökan</button>
 
+
       </div>
 
       {ansokansNames.map(({ansokanId, title, fullName, email, major})=>{
-        return <Ansokan key= {ansokanId} id={ansokanId} title={title} fullName ={fullName} email={email} major={major} onDelete={deleteAnsokan} />
+        return <Ansokan key= {ansokanId} id={ansokanId} title={title} fullName ={fullName} email={email} major={major} onDelete={deleteAnsokan}  />
+  
       })}
+
+      
+
     </>
   
   );

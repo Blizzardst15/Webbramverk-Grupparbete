@@ -1,4 +1,4 @@
-const Ansokan = ({id, descrition, title, fullName, email, major, onDelete}) =>{
+const Ansokan = ({id, descrition, title, fullName, email, major, onDelete, }) =>{
     return(
         <div>
             <h3>{title}</h3>
@@ -7,7 +7,11 @@ const Ansokan = ({id, descrition, title, fullName, email, major, onDelete}) =>{
             <p>{major}</p>
             <p>{`ID: ${id}`}</p>
             <button onClick={()=> onDelete(id)}>Delete</button>
+        
 
+            <tr>
+            <td><button onClikc ={()=> onUpdate(id)}> Update</button></td>
+            </tr>
 
         </div>
 
