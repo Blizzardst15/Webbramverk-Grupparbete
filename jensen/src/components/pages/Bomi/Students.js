@@ -60,15 +60,6 @@ const deleteAnsokan = (deleteId) =>{
     taBort(`/api/delete/${id}`)
 }
 
-  const selectAnsokan = (id) => {
-    let item = ansokans [id -1];
-
-    setTitle(item.title)
-    setFullName(item.fullName)
-    setEmail(itme.email)
-    setMajor(item.major)
-  }
-
 
 const upadteAnsokan = (id) => {
 
