@@ -1,6 +1,10 @@
 import {useState, useEffect} from 'react';
 import Ansokan from './Ansokan';
-import { get, put, taBort, post } from "./api"
+import { get, put, taBort, post } from "./api";
+
+import './AnsokanTable.css';
+
+
 
 const Students = () => {
 
@@ -81,7 +85,7 @@ const updateAnsokan = (id) => {
   return (
     <>
       <h3 style={{textAlign:'center'}}>Jensen YH Ansökan</h3> 
-      <div style={{display: 'flex', marginLeft: '20px'}}>
+      <div style={{display: 'flex',flexDirection: "colum" ,marginLeft: '10px'}}>
 
         <label>Title: <input value={title} onChange={(event) => {
           setTitle(event.target.value)
@@ -100,11 +104,29 @@ const updateAnsokan = (id) => {
         </label>
         
         <br /><br /> <br /><br />
+
       <button style ={{position:"relative",color:"blue"}}
         onClick={addAnsokan}>Add yh ansökan</button>
-
-
       </div>
+
+      <div className = "new-table">
+        <h4>Update Ansökan Test </h4>
+        <table>
+            <thead>
+            <tr>
+                    <th> Title </th>
+                    <th> FullName </th>
+                    <th> Email </th>
+                    <th> Major </th>
+                
+            </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+    
+    </div>
 
       {ansokansNames.map(({ansokanId, title, fullName, email, major})=>{
         return <Ansokan 
@@ -129,8 +151,10 @@ const updateAnsokan = (id) => {
         editMajor = {editMajor}
 
         />
-  
+    
+
       })}
+  
     </>
   
   );
