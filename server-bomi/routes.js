@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-const fetch = require('node-fetch');
+
 
 let ansokansNames = []
 
@@ -86,6 +86,3 @@ router.delete('/delete/:ansokansNameId', (req, res)=>{
 })
 
 module.exports = router;
- 
-
- 
