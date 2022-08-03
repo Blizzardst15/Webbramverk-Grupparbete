@@ -1,9 +1,7 @@
 import {useState, useEffect} from 'react';
 import Ansokan from './Ansokan';
 import { get, put, taBort, post } from "./api";
-
-import './AnsokanTable.css';
-
+import AnsokanTable from './AnsokanTable';
 
 
 const Students = () => {
@@ -82,6 +80,7 @@ const updateAnsokan = (id) => {
   })
 }
 
+
   return (
     <>
       <h3 style={{textAlign:'center'}}>Jensen YH Ansökan</h3> 
@@ -91,15 +90,15 @@ const updateAnsokan = (id) => {
           setTitle(event.target.value)
         }} /></label>
     
-        <label>FullName: <input value={fullName} onChange={(event)=>
+        <label>FullName: <input value={fullName}  required="required" onChange={(event)=>
         setFullName(event.target.value)}/>
-        </label>
+        </label> 
 
-        <label>E-mail: <input value={email} onChange={(event)=>
+        <label>E-mail: <input value={email}  required="required" onChange={(event)=>
         setEmail(event.target.value)}/>
         </label>
 
-        <label>Major: <input value={major} onChange={(event)=>
+        <label>Major: <input value={major}  required="required" onChange={(event)=>
         setMajor(event.target.value)}/>
         </label>
         
@@ -108,25 +107,6 @@ const updateAnsokan = (id) => {
       <button style ={{position:"relative",color:"blue"}}
         onClick={addAnsokan}>Add yh ansökan</button>
       </div>
-
-      <div className = "new-table">
-        <h4>Update Ansökan Test </h4>
-        <table>
-            <thead>
-            <tr>
-                    <th> Title </th>
-                    <th> FullName </th>
-                    <th> Email </th>
-                    <th> Major </th>
-                
-            </tr>
-            </thead>
-            <tbody>
-              
-            </tbody>
-        </table>
-    
-    </div>
 
       {ansokansNames.map(({ansokanId, title, fullName, email, major})=>{
         return <Ansokan 
@@ -155,6 +135,7 @@ const updateAnsokan = (id) => {
 
       })}
   
+      <AnsokanTable />
     </>
   
   );

@@ -1,0 +1,18 @@
+
+[
+{
+    "id": 1,
+    "title":"title 01",
+    "fullName":"Jensen Test",
+    "email": "1 jensen@email.com",
+    "major": "Jensen yh utb 01"
+},
+{
+    "id": 2,
+    "title":"title 02",
+    "fullName":"Jensen Test 02",
+    "email": "2 jensen@email.com",
+    "major": "Jensen yh utb 02" 
+}
+
+]

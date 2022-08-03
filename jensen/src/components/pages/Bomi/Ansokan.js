@@ -31,19 +31,34 @@ const Ansokan = ({id,
             <input value={updateTitle} onChange={(e) => {
                         editTitle(e.target.value)
                         console.log(updateTitle)
-                    }} type="text" name="update" placeholder=" Write Title"/>
+                    }} 
+                    type="text" 
+                    name="updateTitle"  
+                    placeholder=" Write Title..."/>
             <input value={updateFullName} onChange={(e) => {
                         editFullName(e.target.value)
                         console.log(updateFullName)
-                    }} type="text" name="update" placeholder=" Write Full Name" />
+                    }} 
+                    type="text" 
+                    name="updateFullName"  
+                    required="required" 
+                    placeholder=" Write Full Name" />
             <input value={updateEmail} onChange={(e) => {
                         editEmail(e.target.value)
                         console.log(updateEmail)
-                    }} type="email" name="email" placeholder=" Write E-mail"/>
+                    }} 
+                    type="email" 
+                    name="email" 
+                    required="required" 
+                    placeholder=" Write E-mail"/>
             <input value={updateMajor} onChange={(e) => {
                         editMajor(e.target.value)
                         console.log(updateMajor)
-                    }} type="text" name="update" placeholder=" Write Major"/>
+                    }} 
+                    type="text" 
+                    name="update" 
+                    required="required" 
+                    placeholder=" Write Major"/>
             </form>
         </div>
 
