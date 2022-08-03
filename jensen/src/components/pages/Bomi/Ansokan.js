@@ -48,7 +48,7 @@ const Ansokan = ({id,
                         console.log(updateEmail)
                     }} 
                     type="email" 
-                    name="email" 
+                    name="updateEmail" 
                     required="required" 
                     placeholder=" Write E-mail"/>
             <input value={updateMajor} onChange={(e) => {
@@ -56,7 +56,7 @@ const Ansokan = ({id,
                         console.log(updateMajor)
                     }} 
                     type="text" 
-                    name="update" 
+                    name="updateMajor" 
                     required="required" 
                     placeholder=" Write Major"/>
             </form>
