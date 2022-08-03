@@ -17,9 +17,6 @@ const AnsokanTable = () => {
         major:''
     })
 
-
-
-
     const handleAddFormChange = (event) => {
         
     }
@@ -41,7 +38,6 @@ return (
             <tbody>
                 {applys.map((applys) =>(
                     <tr>
-                        
                         <td>{applys.title}</td>
                         <td>{applys.fullName}</td>
                         <td>{applys.email}</td>

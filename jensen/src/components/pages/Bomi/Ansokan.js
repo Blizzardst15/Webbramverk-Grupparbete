@@ -16,6 +16,18 @@ const Ansokan = ({id,
     editEmail,
     editMajor
     }) =>{
+    
+        // handleChange = (e) => {
+        //     this.setState({
+        //         [e.target.fullName]: e.target.value
+        //     })
+        // }
+
+        // handleSubmit = (e) => {
+        //     e.preventDefault();
+
+        // }
+
     return(
         <div>
             <h3>{title}</h3>

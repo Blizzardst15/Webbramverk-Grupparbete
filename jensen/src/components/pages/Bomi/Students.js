@@ -106,6 +106,24 @@ const updateAnsokan = (id) => {
 
       <button style ={{position:"relative",color:"blue"}}
         onClick={addAnsokan}>Add yh ansökan</button>
+
+<button
+  onClick = {() => {
+    console.log ("Edited ansökan")
+
+    put(`/api/update/${id}`, {
+      ansokanId: updateAnsokan,
+      title: updateTitle,
+      fullName: updateFullName,
+      email: updateEmail,
+      major: updateMajor
+    }).then((res) => console.log(res));
+    get("/api/read").then((res) => setAnsokansName(res.data))
+  }}
+  >Edit
+</button>
+
+
       </div>
 
       {ansokansNames.map(({ansokanId, title, fullName, email, major})=>{
@@ -131,7 +149,8 @@ const updateAnsokan = (id) => {
         editMajor = {editMajor}
 
         />
-    
+        
+        
 
       })}
   
