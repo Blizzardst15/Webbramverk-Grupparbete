@@ -17,17 +17,7 @@ const Ansokan = ({id,
     editMajor
     }) =>{
     
-        // handleChange = (e) => {
-        //     this.setState({
-        //         [e.target.fullName]: e.target.value
-        //     })
-        // }
-
-        // handleSubmit = (e) => {
-        //     e.preventDefault();
-
-        // }
-
+    
     return(
         <div>
             <h3>{title}</h3>
@@ -72,6 +62,7 @@ const Ansokan = ({id,
                     required="required" 
                     placeholder=" Write Major"/>
             </form>
+
         </div>
 
     )

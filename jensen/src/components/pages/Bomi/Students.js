@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import Ansokan from './Ansokan';
 import { get, put, taBort, post } from "./api";
-import AnsokanTable from './AnsokanTable';
+
 
 
 const Students = () => {
@@ -10,6 +10,7 @@ const [id, setId] = useState(0)
 const incrementCounter = () => {
   setId((previousValue) => previousValue + 1)
 }
+
 
 const [ title, setTitle] = useState('')
 const [fullName, setFullName] = useState('')
@@ -151,10 +152,10 @@ const updateAnsokan = (id) => {
         />
         
         
+        
 
       })}
   
-      <AnsokanTable />
     </>
   
   );
