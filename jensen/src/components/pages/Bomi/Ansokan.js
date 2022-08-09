@@ -16,6 +16,7 @@ const Ansokan = ({id,
     editEmail,
     editMajor
     }) =>{
+
     
     
     return(
