@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import Ansokan from './Ansokan';
-import AnsokanTable from './AnsokanTable';
+// import AnsokanTable from './AnsokanTable';
 import { get, put, taBort, post } from "./api";
 
 
@@ -151,13 +151,10 @@ const updateAnsokan = (id) => {
         editMajor = {editMajor}
 
         />
-        
-        
-        
 
       })}
   
-      <AnsokanTable />
+      {/* <AnsokanTable /> */}
     </>
   
   );
