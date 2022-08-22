@@ -44,7 +44,7 @@ const Header = () => {
         >
           Bomi
         </Link>
-        <Link
+        {/* <Link
           to="/bomib"
           style={{
             textDecoration: "none",
@@ -54,7 +54,7 @@ const Header = () => {
           }}
         >
           BomiB
-        </Link> 
+        </Link>  */}
         <Link
           to="/kristofer"
           style={{
