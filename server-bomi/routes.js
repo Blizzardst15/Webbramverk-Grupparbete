@@ -1,58 +1,60 @@
-const express = require('express');
-const app = express();
+const express = require("express");
+// const app = express();
 const router = express.Router();
 
 
 let ansokansNames = []
 
-router.get('/read', (req, res) => {
+router.get("/read", (req, res) => {
     console.log ({
         method: req.method,
         data: ansokansNames
     })
     res.json({
-        status: 'lyckat',
+        status: "lyckat",
         method: req.method,
-        data: ansokansNames
+        data: ansokansNames,
     })
 })
 
-router.post('/create', (req, res) =>{
+router.post("/create", (req, res) =>{
     console.log({
         method: req.method,
-        body: req.method
+        body: req.body,
     })
 
     const ansokansName = {
         id: req.body.id,
         title: req.body.title,
         fullName: req.body.fullName,
-        delete: false
+        email:req.body.email,
+        major:req.body.major,
+        // delete: false
     }
 
     ansokansNames.push(ansokansName)
 
     res.json({
-        status: 'lyckat',
+        status: "lyckat",
         method: req.method,
-        data: ansokansName
+        data: ansokansName,
     })
 })
 
-router.put('/update/:ansokansNameId', (req, res) =>{
-    const ansokansNameId = req.params.ansokansNameId
-    const title = req.body.title
-    const fullName = req.body.fullName
-    const email = req.body.email
-    const major = req.body.major
+router.put("/update/:ansokansNameId", (req, res) =>{
+    const ansokansNameId = req.params.ansokansNameId;
+    const title = req.body.title;
+    const fullName = req.body.fullName;
+    const email = req.body.email;
+    const major = req.body.major;
 
     const newAnsokansName = {
         id: ansokansNameId,
         title,
         fullName,
         email,
-        major
-    }
+        major,
+    };
 
     console.log('ansokans ID:', ansokansNameId)
     console.log('fullName:', fullName)
@@ -61,25 +63,25 @@ router.put('/update/:ansokansNameId', (req, res) =>{
 
     const ansokansNameIndex = ansokansNames.findIndex((ansokans) => ansokans.id == ansokansNameId)
     console.log('ansokans index:', ansokansNameIndex)
-    ansokansNames [ansokansNameIndex] = newAnsokansName
+    ansokansNames [ansokansNameIndex] = newAnsokansName;
 
     res.json ({
-        status: 'lyckat',
+        status: "lyckat",
         method: req.method,
-        data: newAnsokansName
+        data: newAnsokansName,
     })
 
 })
 
 
-router.delete('/delete/:ansokansNameId', (req, res)=>{
+router.delete("/delete/:ansokansNameId", (req, res)=>{
     const ansokansNameId = req.params.ansokansNameId
     const ansokansNameIndex = ansokansNames.find((ansokansName) => ansokansName.id == ansokansNameId)
     ansokansNames.splice(ansokansNameIndex, 1)
     console.log('ansokansNameIndex:', ansokansNameIndex)
 
     res.json({
-        status: 'lyckat',
+        status: "lyckat",
         method: req.method,
         data: ansokansNameId
     })
