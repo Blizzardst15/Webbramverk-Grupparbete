@@ -1,15 +1,18 @@
-import express from "express";
-import bodyParser from "body-parser";
+//npm init --y
+//npm install
+//npm i express nodemon body-parser
 
-const routes = require("./routes");
-
+const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
+const router = require("./routes");
+
 const port = 8080;
 
 app.use(bodyParser.json());
-app.use("/api", routes);
+app.use("/api", router);
 
-// app.get("/",(req,res) => res.send("server is running"));
+app.get("/",(req,res) => res.send("server is running"));
 // app.all("*", (req, res) => res.send("That route does not exist"))
 
 
