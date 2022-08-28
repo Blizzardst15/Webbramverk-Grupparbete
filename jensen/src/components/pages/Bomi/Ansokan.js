@@ -1,11 +1,15 @@
-const Ansokan = ({id, 
+
+import React , {useState} from "react";
+
+const Ansokan = ({
+    id, 
     title, 
     fullName, 
     email, 
     major, 
     onDelete, 
-    
-    onUpdate,
+
+    updateAnsokan,
     updateTitle,
     updateFullName,
     updateEmail,
@@ -16,8 +20,11 @@ const Ansokan = ({id,
     editEmail,
     editMajor
     }) =>{
+        const [Active, setActive] = useState("");
 
-    
+    function toggleHandler () {
+        setActive(Active === "" ? "active" : "");
+    }
     
     return(
         <div>
@@ -26,9 +33,12 @@ const Ansokan = ({id,
             <p>{email}</p>
             <p>{major}</p>
             <p>{`ID: ${id}`}</p>
+
+            <button onClick={toggleHandler}>
+            {/* <p>title:{title} FullName:{fullName} Email:{email} Major:{major}</p>  */}
+            </button>
             <button onClick={()=> onDelete(id)}>Delete ansökan</button>
-        
-            <button onClick ={()=> onUpdate(id)}> Update ansökan</button>
+            <button onClick ={()=> updateAnsokan(id)}> Update ansökan</button>
 
             <form>
             <input value={updateTitle} onChange={(e) => {
