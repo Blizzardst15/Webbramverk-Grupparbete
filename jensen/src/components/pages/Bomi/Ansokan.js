@@ -20,6 +20,7 @@ const Ansokan = ({
     editEmail,
     editMajor
     }) =>{
+        console.log(id)
         const [Active, setActive] = useState("");
 
     function toggleHandler () {
