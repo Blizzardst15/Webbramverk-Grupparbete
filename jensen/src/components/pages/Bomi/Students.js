@@ -67,7 +67,7 @@ const deleteAnsokan = (deleteId) =>{
 const updateAnsokan = (id) => {
   console.log('titlel:', updateTitle, 'fullName:', updateFullName, 'email:', updateEmail, 'major:', updateMajor)
   put(`/api/update/${id}`, {
-  
+
     title: updateTitle,
     fullName: updateFullName,
     email: updateEmail,
