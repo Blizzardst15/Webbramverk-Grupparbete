@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import Ansokan from './Ansokan';
-// import AnsokanTable from './AnsokanTable';
 import { get, put, taBort, post } from "./api";
 
 
@@ -68,6 +67,7 @@ const deleteAnsokan = (deleteId) =>{
 const updateAnsokan = (id) => {
   console.log('titlel:', updateTitle, 'fullName:', updateFullName, 'email:', updateEmail, 'major:', updateMajor)
   put(`/api/update/${id}`, {
+  
     title: updateTitle,
     fullName: updateFullName,
     email: updateEmail,
@@ -105,22 +105,9 @@ const updateAnsokan = (id) => {
 
       <button style ={{position:"relative",color:"blue"}}
         onClick={addAnsokan}>Add yh ansökan</button>
-
-<button
-  onClick = {() => {
-    console.log ("Edited ansökan")
-
-    put(`/api/update/${id}`, {
-      ansokanId: updateAnsokan,
-      title: updateTitle,
-      fullName: updateFullName,
-      email: updateEmail,
-      major: updateMajor
-    }).then((res) => console.log(res));
-    get("/api/read").then((res) => setAnsokansName(res.data))
-  }}
-  >Edit
-</button>
+      
+      <button style ={{position:"relative",color:"blue"}}
+        onClick={updateAnsokan}>Edit</button>
 
 
       </div>
@@ -150,8 +137,6 @@ const updateAnsokan = (id) => {
         />
 
       })}
-  
-      {/* <AnsokanTable /> */}
     </>
   
   );
