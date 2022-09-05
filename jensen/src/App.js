@@ -4,7 +4,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sara from "./components/pages/sara/Sara";
 import NoPage from "./components/pages/NoPage";
-import Students from "./components/pages/Bomi/Students";
+import Application from "./components/pages/bomi/Application";
 
 
 import Erik from "./components/pages/erik/Erik";
@@ -16,16 +16,12 @@ import Home from "./components/pages/Home";
 function App() {
   return (
     <BrowserRouter>
-  
-    
       <Header />
-
-    
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
           <Route path="sara" element={<Sara />} />
-          <Route path="bomi" element={<Students />} />
+          <Route path="bomi" element={<Application />} />
           <Route path="kristofer" element={<Kristofer />} />
           <Route path="erik" element={<Erik />} />
           <Route path="*" element={<NoPage />} />

@@ -1,89 +1,73 @@
 const express = require("express");
-// const app = express();
 const router = express.Router();
 
+let numApplications = 0
+let applications = []
 
-let ansokansNames = []
+router.get("/clear", (req, res) => {
+    applications = []
+    res.status(200).send()
+})
 
 router.get("/read", (req, res) => {
-    console.log ({
-        method: req.method,
-        data: ansokansNames
-    })
+    console.log ({method: req.method,data: applications})
+
     res.json({
         status: "lyckat",
         method: req.method,
-        data: ansokansNames,
+        data: applications,
     })
 })
 
 router.post("/create", (req, res) =>{
-    console.log({
-        method: req.method,
-        body: req.body,
-    })
-
-    const ansokansName = {
-        id: req.body.id,
-        title: req.body.title,
-        fullName: req.body.fullName,
-        email:req.body.email,
-        major:req.body.major,
-        // delete: false
-    }
-
-    ansokansNames.push(ansokansName)
+    console.log({method: req.method,body: req.body,})
+    let data = req.body
+    data.id = ++numApplications
+    applications.push(data)
 
     res.json({
         status: "lyckat",
         method: req.method,
-        data: ansokansName,
+        data: data,
     })
+    console.log(data)
 })
 
-router.put("/update/:ansokansNameId", (req, res) =>{
-    const ansokansNameId = req.params.ansokansNameId;
+router.put("/update/:id", (req, res) =>{
+    const id = req.params.id;
     const title = req.body.title;
     const fullName = req.body.fullName;
     const email = req.body.email;
     const major = req.body.major;
 
-    const newAnsokansName = {
-        id: ansokansNameId,
-        title,
-        fullName,
-        email,
-        major,
-    };
-
-    console.log('ansokans ID:', ansokansNameId)
+    console.log('ansokan ID:', id)
     console.log('fullName:', fullName)
     console.log('email:', email)
     console.log('major:', major)
 
-    const ansokansNameIndex = ansokansNames.findIndex((ansokans) => ansokans.id == ansokansNameId)
-    console.log('ansokans index:', ansokansNameIndex)
-    ansokansNames [ansokansNameIndex] = newAnsokansName;
+    const data = applications.find((application) => application.id == id)
+    data.title=title;
+    data.fullName=fullName;
+    data.email=email;
+    data.major=major;
 
     res.json ({
         status: "lyckat",
         method: req.method,
-        data: newAnsokansName,
+        data: data,
     })
-
 })
 
 
-router.delete("/delete/:ansokansNameId", (req, res)=>{
-    const ansokansNameId = req.params.ansokansNameId
-    const ansokansNameIndex = ansokansNames.find((ansokansName) => ansokansName.id == ansokansNameId)
-    ansokansNames.splice(ansokansNameIndex, 1)
-    console.log('ansokansNameIndex:', ansokansNameIndex)
-
+router.delete("/delete/:id", (req, res)=>{
+    const id = req.params.id;
+    const index = applications.findIndex((application) => application.id == id)
+    applications.splice(index, 1)
+    console.log('application:', id)
     res.json({
         status: "lyckat",
         method: req.method,
-        data: ansokansNameId
+        data: {removed: id}
     })
 })
 
